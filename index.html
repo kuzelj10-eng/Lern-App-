@@ -156,6 +156,7 @@ html, body { height:100%; font-family:'Segoe UI',system-ui,-apple-system,sans-se
 /* Responsive */
 @media (max-width:360px) { .subject-grid { grid-template-columns:1fr; } .start-logo h1 { font-size:26px; } }
 </style>
+<base target="_blank">
 </head>
 <body>
 <div id="app">
@@ -404,7 +405,7 @@ function startApp() {
   document.getElementById('appHeader').style.display = 'flex';
   document.getElementById('bottomNav').style.display = 'flex';
   updateHeader();
-  showCharBubble('Los geht\'s, ich helfe dir!');
+  showCharBubble('Los geht's, ich helfe dir!');
   showScreen('dashboardScreen');
 }
 
@@ -527,7 +528,7 @@ function generateMathTask() {
   const df = currentDiff;
   let a,b,op,ans,steps=[];
   const cat = currentMathCat;
-  
+
   if (cat==='add') {
     if (cl==='3') {
       if (df==='Leicht') { a=10+Math.floor(Math.random()*40); b=5+Math.floor(Math.random()*20); }
@@ -573,7 +574,7 @@ function generateMathTask() {
     }
     steps = [`Frage: Wie oft passt ${b} in ${a}?`,`Rechne schriftlich oder im Kopf.`,`${a} ÷ ${b} = ${ans}`,`Probiere: ${b} × ${ans} = ${a}`];
   }
-  
+
   state.currentMath = {a,b,ans,steps,cat};
   document.getElementById('mathQuestion').textContent = `${a} ${cat==='add'?'+':cat==='sub'?'-':cat==='mul'?'×':'÷'} ${b} = ?`;
   document.getElementById('mathInput').value = '';
